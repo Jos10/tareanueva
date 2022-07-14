@@ -1,0 +1,62 @@
+---
+title: "Untitled"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r}
+Est_pol <-
+read_xls("estadisticaspoliciales2021.xls") 
+
+cantones <-
+  st_read(
+    dsn = "cantones_simplificados.geojson",
+    quiet = TRUE
+  ) %>%
+  st_transform(4326) # transformación a WGS84
+```
+
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(dplyr)
+library(ggplot2)
+library(ggthemes)
+library(plotly)
+library(DT)
+library(readr)
+library(readxl)
+library(lubridate)
+library(tidyverse)
+library(sf)
+library(leaflet)
+library(flexdashboard)
+library(stringi)
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+
+```
+
+### Chart C
+
+```{r}
+
+```
+
